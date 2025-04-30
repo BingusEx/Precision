@@ -25,6 +25,9 @@
 #include <shared_mutex>
 
 using namespace std::literals;
+using namespace RE;
+using namespace SKSE;
+using namespace REL;
 
 namespace logger = SKSE::log;
 
@@ -33,18 +36,15 @@ namespace util
 	using SKSE::stl::report_and_fail;
 }
 
-namespace std
+template <class T>
+struct std::hash<RE::BSPointerHandle<T>>
 {
-	template <class T>
-	struct hash<RE::BSPointerHandle<T>>
+	uint32_t operator()(const RE::BSPointerHandle<T>& a_handle) const
 	{
-		uint32_t operator()(const RE::BSPointerHandle<T>& a_handle) const
-		{
-			uint32_t nativeHandle = const_cast<RE::BSPointerHandle<T>*>(&a_handle)->native_handle();  // ugh
-			return nativeHandle;
-		}
-	};
-}
+		uint32_t nativeHandle = const_cast<RE::BSPointerHandle<T>*>(&a_handle)->native_handle();  // ugh
+		return nativeHandle;
+	}
+};
 
 using Lock = std::shared_mutex;
 using ReadLocker = std::shared_lock<Lock>;

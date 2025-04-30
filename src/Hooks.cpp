@@ -1168,7 +1168,7 @@ namespace Hooks
 									if (ragdollConstraint) {
 										constraint->RemoveFromCurrentWorld();
 
-										RE::bhkWorld* world = reinterpret_cast<RE::bhkWorld*>(wrapper->GetWorld2()->unk430);
+										RE::bhkWorld* world = reinterpret_cast<RE::bhkWorld*>(wrapper->GetWorld2()->userData);
 										ragdollConstraint->MoveToWorld(world);
 										unk = ragdollConstraint;
 									}

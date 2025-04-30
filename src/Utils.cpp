@@ -988,7 +988,7 @@ namespace Utils
 		a_cloningProcess.copyType = *g_unkCloneValue3;
 		a_cloningProcess.appendChar = *g_unkCloneValue4;
 
-		a_cloningProcess.unk68 = a_scale;
+		a_cloningProcess.scale = a_scale;
 	}
 
 	RE::MATERIAL_ID GetHitMaterialID(RE::hkpRigidBody* a_hitRigidBody, const RE::hkpContactPointEvent& a_event, int a_hitBodyIdx)

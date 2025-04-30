@@ -403,28 +403,28 @@ namespace RE
 
 
 
-	class hkContactPointMaterial
-	{
-	public:
-		enum FlagEnum
-		{
-			kIsNew = 1,
-			kUsesSolverPath2 = 2,
-			kBreakoffObjectID = 4,
-			kIsDisabled = 8
-		};
+	//class hkContactPointMaterial
+	//{
+	//public:
+	//	enum FlagEnum
+	//	{
+	//		kIsNew = 1,
+	//		kUsesSolverPath2 = 2,
+	//		kBreakoffObjectID = 4,
+	//		kIsDisabled = 8
+	//	};
 
-		uint64_t userData;
-		hkUFloat8 friction;
-		uint8_t restitution;
-		hkUFloat8 maxImpulse;
-		uint8_t flags;
-	};
+	//	uint64_t userData;
+	//	hkUFloat8 friction;
+	//	uint8_t restitution;
+	//	hkUFloat8 maxImpulse;
+	//	uint8_t flags;
+	//};
 
-	class hkpContactPointProperties : public hkpSolverResults, public hkContactPointMaterial
-	{
-		float internalDataA;
-	};
+	//class hkpContactPointProperties : public hkpSolverResults, public hkContactPointMaterial
+	//{
+	//	float internalDataA;
+	//};
 
 	class hkpConvexVerticesShape : public hkpConvexShape
 	{
